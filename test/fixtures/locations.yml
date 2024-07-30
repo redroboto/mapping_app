@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  longitude: 1.5
+  latitude: 1.5
+  address: MyString
+  2017: false
+  2018: false
+  2019: false
+  2020: false
+  2021: false
+  2022: false
+  2023: false
+  2024: false
+
+two:
+  name: MyString
+  longitude: 1.5
+  latitude: 1.5
+  address: MyString
+  2017: false
+  2018: false
+  2019: false
+  2020: false
+  2021: false
+  2022: false
+  2023: false
+  2024: false
