@@ -1,0 +1,31 @@
+* {
+    font-family: "Montserrat Regular";
+}
+
+.montserrat-semibold {
+    font-family: "Montserrat-SemiBold";
+}
+
+
+/* Font Styles */
+
+@font-face {
+    font-family: "Montserrat Regular";
+    src: url("https://db.onlinewebfonts.com/t/0462590be6674a5827956be5045c54de.eot");
+    src: url("https://db.onlinewebfonts.com/t/0462590be6674a5827956be5045c54de.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/0462590be6674a5827956be5045c54de.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/0462590be6674a5827956be5045c54de.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/0462590be6674a5827956be5045c54de.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/0462590be6674a5827956be5045c54de.svg#Montserrat Regular")format("svg");
+}
+
+
+@font-face {
+    font-family: "Montserrat-SemiBold";
+    src: url("https://db.onlinewebfonts.com/t/99226186ebf0771f0be7c6255b3491a8.eot");
+    src: url("https://db.onlinewebfonts.com/t/99226186ebf0771f0be7c6255b3491a8.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/99226186ebf0771f0be7c6255b3491a8.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/99226186ebf0771f0be7c6255b3491a8.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/99226186ebf0771f0be7c6255b3491a8.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/99226186ebf0771f0be7c6255b3491a8.svg#Montserrat-SemiBold")format("svg");
+}
