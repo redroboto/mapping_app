@@ -1,5 +1,21 @@
-<ul>
+<ul class="flex gap-2" >
     <li>Item 1</li>
     <li>Item 2</li>
     <li>Item 3</li>
 </ul>
+
+<div data-controller="dropdown" class="relative">
+  <button data-action="click->dropdown#toggle">Toggle Dropdown</button>
+  <div data-dropdown-target="list" class="hidden z-10">
+    <ol>
+        <li>2017</li>
+        <li>2018</li>
+        <li>2019</li>
+        <li>2020</li>
+        <li>2021</li>
+        <li>2022</li>
+        <li>2023</li>
+        <li>2024</li>
+    </ol>
+  </div>
+</div>
