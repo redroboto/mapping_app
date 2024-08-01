@@ -11,7 +11,7 @@ module NewsService
       response = HTTParty.send(
         http_method,
         url,
-        query: query.merge(apiKey: api_key, pageSize: 5),
+        query: query.merge(apiKey: api_key, pageSize: 10),
         headers: { 'Content-Type' => 'application/json' }
       )
 

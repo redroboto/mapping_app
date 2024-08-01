@@ -6,6 +6,26 @@
     font-family: "Montserrat-SemiBold";
 }
 
+/* Swiper JS Styles */
+
+.swiper {
+    width: 100%;
+    height: fit-content;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    color: #ffffff;
+}
+
 
 /* Font Styles */
 
