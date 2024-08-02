@@ -21,12 +21,12 @@
                     <% if article['title'] && article['urlToImage'] && article['author'] && article['description'] %>
                         <div class="swiper-slide">
                             <a href="<%= article['url'] %>" target="_blank" class="flex-1 lg:max-w-xs">
-                                <li class="w-full h-fit hover:scale-105 duration-300">
+                                <li class="w-full h-fit md:hover:scale-105 duration-300">
                                     <% if article['urlToImage'] %>
                                         <img class="w-full object-fit h-80 lg:h-60" src="<%= article['urlToImage'] %>" alt="Image for <%= article['title'] %>" />
                                     <% end %>
-                                    <div class="bg-white p-4">
-                                        <h3 class="text-lg text-justify font-semibold mb-2 lg:h-28">
+                                    <div class="text-blue-100 p-4">
+                                        <h3 class="text-lg font-semibold mb-2 lg:h-28">
                                             <%= article['title'] %>
                                         </h3>
                                     </div>
@@ -37,8 +37,7 @@
                 <% end %>
             <% end %>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev hover:bg-gray-400"></div>
+        <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
     </div>
 </section>
