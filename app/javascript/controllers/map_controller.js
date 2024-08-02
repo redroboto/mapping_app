@@ -9,7 +9,7 @@ export default class extends Controller {
     this.createMap()
     this.map.fitBounds(this.latlongValue)
     this.latlongValue.forEach(place => this.addMarker(place))
-    console.log('Hello world')
+    console.log('Map Controller connected successfully')
   }
 
   createMap() {
