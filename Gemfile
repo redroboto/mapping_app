@@ -73,3 +73,7 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem 'httparty', '~> 0.22.0'
+
+gem 'importmap-rails'

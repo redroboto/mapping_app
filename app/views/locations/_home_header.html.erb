@@ -13,13 +13,32 @@
         </p>
     </span>
 </div>
-<ul class="flex flex-col w-full gap-8 px-8 pb-8 lg:flex-row md:w-full md:px-14 xl:pt-2">
-    <span class="flex flex-col gap-8 md:flex-row md:w-full">
-        <li class="h-40 w-full text-gray-800 bg-gray-400">News 1</li>
-        <li class="h-40 w-full text-gray-800 bg-gray-400">News 1</li>
-    </span>
-    <span class="flex flex-col gap-8 md:flex-row md:w-full">
-        <li class="h-40 w-full text-gray-800 bg-gray-400">News 1</li>
-        <li class="h-40 w-full text-gray-800 bg-gray-400">News 1</li>
-    </span>
-</ul>
+<section class="px-8 mb-8 md:px-16">
+    <div class="swiper flex justify-center">
+        <div class="swiper-wrapper">
+            <% @news.each_slice(2).with_index do |articles, index| %>
+                <% articles.each do |article| %>
+                    <% if article['title'] && article['urlToImage'] && article['author'] && article['description'] %>
+                        <div class="swiper-slide">
+                            <a href="<%= article['url'] %>" target="_blank" class="flex-1 lg:max-w-xs">
+                                <li class="w-full h-fit hover:scale-105 duration-300">
+                                    <% if article['urlToImage'] %>
+                                        <img class="w-full object-fit h-80 lg:h-60" src="<%= article['urlToImage'] %>" alt="Image for <%= article['title'] %>" />
+                                    <% end %>
+                                    <div class="bg-white p-4">
+                                        <h3 class="text-lg text-justify font-semibold mb-2 lg:h-28">
+                                            <%= article['title'] %>
+                                        </h3>
+                                    </div>
+                                </li>
+                            </a>
+                        </div>
+                    <% end %>
+                <% end %>
+            <% end %>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev hover:bg-gray-400"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</section>
