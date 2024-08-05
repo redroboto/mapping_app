@@ -1,0 +1,35 @@
+<h1>Details partial</h1>
+
+<%# hard code this first to separate toggle() onclick %>
+
+<div class="relative" data-controller="sidebar-dropdown">
+  <button class="px-8 bg-gray-200 text-black rounded" data-action="click->sidebar-dropdown#toggle">Filter by year</button>
+  <div data-sidebar-dropdown-target="list" class="hidden z-10 bg-gray-800">
+    <ol class="absolute z-1000 text-black">
+        <%= link_to "/map?year=2017" do %>
+            <li>2017</li>
+        <% end %>
+        <%= link_to "/map?year=2018" do %>
+            <li>2018</li>
+        <% end %>
+        <%= link_to "/map?year=2019" do %>
+            <li>2019</li>
+        <% end %>
+        <%= link_to "/map?year=2020" do %>
+            <li>2020</li>
+        <% end %>
+        <%= link_to "/map?year=2021" do %>
+            <li>2021</li>
+        <% end %>
+        <%= link_to "/map?year=2022" do %>
+            <li>2022</li>
+        <% end %>
+        <%= link_to "/map?year=2023" do %>
+            <li>2023</li>
+        <% end %>
+        <%= link_to "/map?year=2024" do %>
+            <li>2024</li>
+        <% end %>
+    </ol>
+  </div>
+</div>

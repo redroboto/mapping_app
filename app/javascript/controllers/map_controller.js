@@ -5,11 +5,14 @@ export default class extends Controller {
   static targets = ["container"]
   static values = { latlong: Array }
 
+  phil_coords = [12.8797, 121.7740]
+
   connect() {
-    this.createMap()
-    this.map.fitBounds(this.latlongValue)
-    this.latlongValue.forEach(place => this.addMarker(place))
-    console.log('Map Controller connected successfully')
+    this.createMap();
+    // this.map.fitBounds(this.latlongValue)
+    this.map.setView(this.phil_coords, 6);
+    this.latlongValue.forEach(place => this.addMarker(place));
+    console.log('Map Controller connected successfully');
   }
 
   createMap() {
@@ -26,8 +29,9 @@ export default class extends Controller {
     L.marker([latitude, longitude])
       .addTo(this.map)
       .bindPopup(`<div>latitude: ${latitude}</div><div>longitude: ${longitude}</div>`)
+    // .openPopup();
   }
-
+  // added openPopup. Add POGO name and details to popup?
 
   disconnect() {
     this.map.remove();

@@ -12,3 +12,6 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import SidebarDropdownController from "./sidebar_dropdown_controller"
+application.register("sidebar-dropdown", SidebarDropdownController)
