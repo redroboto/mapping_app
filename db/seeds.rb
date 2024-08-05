@@ -8,7 +8,7 @@
 
 require 'csv'
 
-file_path = Rails.root.join('db', 'locations.csv')
+file_path = Rails.root.join('db', 'pogo_data8.csv')
 CSV.foreach(file_path, headers: true) do |row|
   name = row['name']
   longitude = row['longitude'].to_f
@@ -37,6 +37,7 @@ CSV.foreach(file_path, headers: true) do |row|
     is_2023: is_2023,
     is_2024: is_2024
   ) 
+  
 end
 
 p "Seeding Complete."
