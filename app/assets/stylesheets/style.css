@@ -18,14 +18,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    color: #e11d48;
     font-size: 20px;
 }
 
 .swiper-button-prev::after, .swiper-button-next::after {
-    color: #ffffff;
+    color: #e11d48;
 }
-
 
 /* Font Styles */
 

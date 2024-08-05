@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "/map", to: "locations#index"
   get "/report", to: "locations#report"
+  get "/timeline", to: "locations#timeline"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

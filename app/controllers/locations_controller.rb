@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   def index
-    
+
     year = params[:year]
     if year.nil?
       @locations = Location.all
@@ -19,7 +19,7 @@ class LocationsController < ApplicationController
       when "2022"
         @locations = Location.where(is_2022:true)
       when "2023"
-        @locations = Location.where(is_2023:true)  
+        @locations = Location.where(is_2023:true)
       when "2024"
         @locations = Location.where(is_2024:true)
       end
@@ -36,6 +36,10 @@ class LocationsController < ApplicationController
   end
 
   def report
+
+  end
+
+  def timeline
 
   end
 end
