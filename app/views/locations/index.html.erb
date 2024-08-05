@@ -1,18 +1,14 @@
-<main class="flex flex-col h-screen relative z-1" data-controller="dropdown">
-    <nav class="flex justify-between items-center px-7 gap-2 h-14 bg-gray-800 text-white">
-        <%= render "locations/navbar"%>
-    </nav>
+<main class="flex flex-col relative z-1" data-controller="dropdown">
     <div class="flex flex-1">
-        <div class="bg-gray-200 p-2">
+        <div class="h-screen bg-gray-200 p-2">
             <%= render "locations/sidebar" %>
         </div>
-        <%# change div class below to w-full when on mobile and when clicking All button%>
-        <div data-dropdown-target="details" class="hidden md:block w-1/4 bg-gray-50">
+        <div data-dropdown-target="details" class="hidden md:block md:min-w-[23rem] bg-gray-50">
             <%= render "locations/index_details" %>
         </div>
         <div class="flex-1">
             <%= render "locations/map", locations:@locations %>
-        </div> 
+        </div>
     </div>
 </main>
 
