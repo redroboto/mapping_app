@@ -1,37 +1,5 @@
 <ul class="flex gap-2" >
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
+    <img src="https://i.postimg.cc/Kjt1yfYp/vp-logo.png" class="h-12 me-3" alt="V&P Logo" />
 </ul>
 
-<div data-controller="dropdown" class="relative">
-  <button data-action="click->dropdown#toggle">Toggle Dropdown</button>
-  <div data-dropdown-target="list" class="hidden z-10">
-    <ol>
-        <%= link_to "/map?year=2017" do %>
-            <li>2017</li>
-        <% end %>
-        <%= link_to "/map?year=2018" do %>
-            <li>2018</li>
-        <% end %>
-        <%= link_to "/map?year=2019" do %>
-            <li>2019</li>
-        <% end %>
-        <%= link_to "/map?year=2020" do %>
-            <li>2020</li>
-        <% end %>
-        <%= link_to "/map?year=2021" do %>
-            <li>2021</li>
-        <% end %>
-        <%= link_to "/map?year=2022" do %>
-            <li>2022</li>
-        <% end %>
-        <%= link_to "/map?year=2023" do %>
-            <li>2023</li>
-        <% end %>
-        <%= link_to "/map?year=2024" do %>
-            <li>2024</li>
-        <% end %>
-    </ol>
-  </div>
-</div>
+<%= render "locations/index_dropdown" %>
