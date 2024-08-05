@@ -1,11 +1,12 @@
-import { Controller } from "@hotwired/stimulus";
+import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="sidebar-dropdown"
+// Connects to data-controller="dropdown"
 export default class extends Controller {
-  static targets = ["list", "details", "button"];
+
+  static targets = ["list", "details"]
 
   connect() {
-    console.log("Sidebar Dropdown controller connected successfully.");
+    console.log("Dropdown controller connected successfully.");
     this.updateLayout();
     window.addEventListener('resize', () => this.updateLayout());
   }
@@ -59,19 +60,5 @@ export default class extends Controller {
 
   detectScreenSize() {
     return window.innerWidth;
-  }
-
-  toggleButtonStyle() {
-    const button = this.buttonTarget;
-
-    if (button.dataset.state === 'default') {
-      button.classList.remove('rounded-tl-3xl', 'rounded-tr-3xl', 'shadow');
-      button.classList.add('rounded-full', 'shadow');
-      button.dataset.state = 'active';
-    } else {
-      button.classList.remove('rounded-full', 'shadow');
-      button.classList.add('rounded-tl-3xl', 'rounded-tr-3xl', 'shadow');
-      button.dataset.state = 'default';
-    }
   }
 }
