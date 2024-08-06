@@ -6,6 +6,10 @@
     font-family: "Montserrat-SemiBold";
 }
 
+.custom-height {
+    height: calc(100vh - 6rem);
+}
+
 /* Swiper JS Styles */
 
 .swiper {
