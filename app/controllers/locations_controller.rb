@@ -1,11 +1,16 @@
 class LocationsController < ApplicationController
   def index
     year = params[:year]
-    if year.nil?
-      @locations = Location.all
-    else
-      @locations = Location.where("is_#{year} = ?", true)
-    end
+    @locations = if year.nil?
+                  Location.where("is_2017", true)
+                 else
+                   Location.where("is_#{year} = ?", true)
+                 end
+  end
+
+  def show
+    @location = Location.find(params[:id])
+    @locations = Location.where(latitude: @location.latitude, longitude: @location.longitude, name: @location.name)
 
   end
 
@@ -18,10 +23,8 @@ class LocationsController < ApplicationController
   end
 
   def report
-
   end
 
   def timeline
-
   end
 end
