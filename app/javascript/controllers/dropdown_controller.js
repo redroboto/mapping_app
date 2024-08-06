@@ -5,42 +5,39 @@ export default class extends Controller {
 
   static targets = ["list", "details"]
 
-  // move this function into a helper later
-  detectScreenSize() {
-    let screenWidth = window.innerWidth;
-    return screenWidth;
-  }
-
   connect() {
     console.log("Dropdown controller connected successfully.");
+    this.updateLayout();
+    window.addEventListener('resize', () => this.updateLayout());
+  }
 
+  disconnect() {
+    window.removeEventListener('resize', () => this.updateLayout());
   }
 
   toggle() {
-
-
-
-    // open and expand details window in mobile only (<768px)
     if (this.detectScreenSize() < 768) {
-      if (this.detailsTarget.classList.contains("hidden")) {
-        this.detailsTarget.classList.add("w-full");
-        this.detailsTarget.classList.remove("hidden");
-      }
-      else {
-        this.detailsTarget.classList.remove("w-full");
-        this.detailsTarget.classList.add("hidden");
-      }
+      this.toggleDetails();
+    } else {
+      this.toggleSidebar();
     }
-    else {
-      // replace this with something else 
-      console.log("md and up so no adjustment")
-      // displays year selection
-      if (this.listTarget.classList.contains("hidden")) {
-        this.open();
-      }
-      else {
-        this.close();
-      }
+  }
+
+  toggleDetails() {
+    if (this.detailsTarget.classList.contains("hidden")) {
+      this.detailsTarget.classList.add("w-full");
+      this.detailsTarget.classList.remove("hidden");
+    } else {
+      this.detailsTarget.classList.remove("w-full");
+      this.detailsTarget.classList.add("hidden");
+    }
+  }
+
+  toggleSidebar() {
+    if (this.listTarget.classList.contains("hidden")) {
+      this.open();
+    } else {
+      this.close();
     }
   }
 
@@ -52,5 +49,16 @@ export default class extends Controller {
     this.listTarget.classList.add("hidden");
   }
 
+  updateLayout() {
+    if (this.detectScreenSize() >= 768) {
+      if (!this.detailsTarget.classList.contains("hidden")) {
+        this.detailsTarget.classList.add("hidden");
+        this.detailsTarget.classList.remove("w-full");
+      }
+    }
+  }
 
+  detectScreenSize() {
+    return window.innerWidth;
+  }
 }
