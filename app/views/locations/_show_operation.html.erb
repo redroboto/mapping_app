@@ -1,0 +1,7 @@
+<% count_of_years = 0 %>
+<% (2017..2024).each do |year| %>
+    <% if @location.send("is_#{year}") %>
+        <% count_of_years += 1 %>
+    <% end %>
+<% end %>
+<%= count_of_years %>
