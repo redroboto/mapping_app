@@ -28,7 +28,7 @@ export default class extends Controller {
     const [latitude, longitude, name, address] = place;
     L.marker([latitude, longitude])
       .addTo(this.map)
-      .bindPopup(`<div>POGO name: ${name}</div>`)
+      .bindPopup(`<div class="font-medium">${name}</div>`)
     // .openPopup();
   }
   // added openPopup. Add POGO name and details to popup?
