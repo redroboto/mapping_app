@@ -2,14 +2,13 @@ import { Controller } from "@hotwired/stimulus"
 import L from "leaflet"
 
 export default class extends Controller {
-  static targets = ["container"]
+  static targets = ["container", "locationName", "locationAddress", "locationCoordinates"]
   static values = { latlong: Array }
 
   phil_coords = [12.8797, 121.7740]
 
   connect() {
     this.createMap();
-    // this.map.fitBounds(this.latlongValue)
     this.map.setView(this.phil_coords, 6);
     this.latlongValue.forEach(place => this.addMarker(place));
     console.log('Map Controller connected successfully');
@@ -26,15 +25,25 @@ export default class extends Controller {
 
   addMarker(place) {
     const [latitude, longitude, name, address] = place;
-    L.marker([latitude, longitude])
+    const marker = L.marker([latitude, longitude])
       .addTo(this.map)
       .bindPopup(`<div class="font-medium">${name}</div>`)
-    // .openPopup();
+
+    marker.on('click', () => {
+      this.updateLocationDetails(name, address, latitude, longitude);
+    });
   }
-  // added openPopup. Add POGO name and details to popup?
+
+  updateLocationDetails(name, address, latitude, longitude) {
+    this.locationNameTarget.textContent = name;
+    this.locationAddressTarget.textContent = address;
+    this.locationCoordinatesTarget.innerHTML = `
+      <p class="pr-4">N ${latitude.toFixed(5)}</p>
+      <p>E ${longitude.toFixed(5)}</p>
+    `;
+  }
 
   disconnect() {
     this.map.remove();
   }
 }
-

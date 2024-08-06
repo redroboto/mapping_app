@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
   root 'locations#home'
+
+  resources :locations, only: [:index, :show]
 
   get "/map", to: "locations#index"
   get "/report", to: "locations#report"
