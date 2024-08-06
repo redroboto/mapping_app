@@ -22,19 +22,3 @@
       <%= yield %>
   </body>
 </html>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const button = document.querySelector('[data-action="click->sidebar-dropdown#toggle"]');
-    button.addEventListener('click', function() {
-      if (button.dataset.state === 'default') {
-        button.classList.remove('rounded-tl-3xl', 'rounded-tr-3xl', 'shadow');
-        button.classList.add('rounded-full', 'shadow');
-        button.dataset.state = 'active';
-      } else {
-        button.classList.remove('rounded-full', 'shadow');
-        button.classList.add('rounded-tl-3xl', 'rounded-tr-3xl', 'shadow');
-        button.dataset.state = 'default';
-      }
-    });
-  });
-</script>
