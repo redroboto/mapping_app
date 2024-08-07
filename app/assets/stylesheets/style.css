@@ -7,7 +7,18 @@
 }
 
 .custom-height {
-    height: calc(100vh - 6rem);
+    height: calc(100vh - 26rem);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 /* Swiper JS Styles */
