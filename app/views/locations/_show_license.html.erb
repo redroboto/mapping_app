@@ -1,0 +1,7 @@
+<% years_with_comma = [] %>
+<% (2017..2024).each do |year| %>
+    <% if @location.send("is_#{year}") %>
+        <% years_with_comma << year %>
+    <% end %>
+<% end %>
+<%= years_with_comma.join(', ') %>
