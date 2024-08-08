@@ -2,9 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import L from "leaflet"
 
 export default class extends Controller {
-  // targets div with data-map-target="controller" attribute
-  static targets = ["container"]
-  // location data taken from _map.html.erb data-map-latlong-value attribute
+  static targets = ["container", "locationName", "locationAddress", "locationCoordinates"]
   static values = { latlong: Array }
 
   // coordinates for the center of the map
@@ -31,13 +29,25 @@ export default class extends Controller {
   // edit bindPopup() to change popup contents of marker
   addMarker(place) {
     const [latitude, longitude, name, address] = place;
-    L.marker([latitude, longitude])
+    const marker = L.marker([latitude, longitude])
       .addTo(this.map)
-      .bindPopup(`<div>POGO name: ${name}</div>`)
+      .bindPopup(`<div class="font-medium">${name}</div>`)
+
+    marker.on('click', () => {
+      this.updateLocationDetails(name, address, latitude, longitude);
+    });
+  }
+
+  updateLocationDetails(name, address, latitude, longitude) {
+    this.locationNameTarget.textContent = name;
+    this.locationAddressTarget.textContent = address;
+    this.locationCoordinatesTarget.innerHTML = `
+      <p class="pr-4">N ${latitude.toFixed(5)}</p>
+      <p>E ${longitude.toFixed(5)}</p>
+    `;
   }
 
   disconnect() {
     this.map.remove();
   }
 }
-

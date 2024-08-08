@@ -34,7 +34,7 @@
             </li>
         <% end %>
     <% end %>
-    <% if params[:controller] == 'locations' && params[:action] == 'index' %>
+    <% if params[:controller] == 'locations' && (params[:action] == 'index' || params[:action] == 'show') %>
         <%= render "locations/index_dropdown" %>
     <% end %>
 </ul>

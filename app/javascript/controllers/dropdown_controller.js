@@ -25,10 +25,10 @@ export default class extends Controller {
 
   toggleDetails() {
     if (this.detailsTarget.classList.contains("hidden")) {
-      this.detailsTarget.classList.add("w-full");
+      this.detailsTarget.classList.add("w-[25rem]");
       this.detailsTarget.classList.remove("hidden");
     } else {
-      this.detailsTarget.classList.remove("w-full");
+      this.detailsTarget.classList.remove("w-[25rem]");
       this.detailsTarget.classList.add("hidden");
     }
   }
