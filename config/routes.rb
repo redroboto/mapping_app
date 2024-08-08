@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  devise_for :users
+  
   root 'locations#home'
 
   resources :locations, only: [:index, :show]
